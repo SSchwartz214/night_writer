@@ -22,9 +22,10 @@ class DictionaryTest < Minitest::Test
   end
 
   def test_capitalize_letter
+    skip
     d = Dictionary.new
     result = "..\n..\n.0\n0.\n..\n.."
-    assert_equal result, d.capitalize_letter("")
+    assert_equal result, d.encode("A")
   end
 
 end

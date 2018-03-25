@@ -31,20 +31,16 @@ class Dictionary
   }
 
   def encode(text)
-   letters = text.split("")
-    # if letters == text.downcase
-     braille_chars = letters.map do | char |
-       ENGLISH_TO_BRAILLE[char]
+    letters = text.split("")
+    braille_chars = letters.map do | char |
+      # if letters.join == text.downcase
+        # binding.pry
+        ENGLISH_TO_BRAILLE[char]
+      # else
+       # ENGLISH_TO_BRAILLE.fetch(:shift).join("\n") + "/n" + braille_chars.join("\n")
+      # end
     end
-        binding.pry
-      braille_chars.join("\n")
-  # else
-      capitalize_letter + "/n" + braille_chars.join("\n")
-  #   end
+    braille_chars.join("\n")
   end
 
-  def capitalize_letter
-    ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
-  end
-# this is a another change
 end
