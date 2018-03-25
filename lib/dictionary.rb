@@ -26,14 +26,25 @@ class Dictionary
     "w" => [".0","00",".0"],
     "x" => ["00","..","00"],
     "y" => ["00",".0","00"],
-    "z" => ["0.",".0","00"]
+    "z" => ["0.",".0","00"],
+    :shift => ["..","..",".0"]
   }
 
   def encode(text)
    letters = text.split("")
-   braille_chars = letters.map do | char |
-     ENGLISH_TO_BRAILLE[char]
-   end
-   braille_chars.join("\n")
+    # if letters == text.downcase
+     braille_chars = letters.map do | char |
+       ENGLISH_TO_BRAILLE[char]
+    end
+        binding.pry
+      braille_chars.join("\n")
+  # else
+      capitalize_letter + "/n" + braille_chars.join("\n")
+  #   end
   end
+
+  def capitalize_letter
+    ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
+  end
+
 end

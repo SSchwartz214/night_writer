@@ -21,4 +21,10 @@ class DictionaryTest < Minitest::Test
     assert_equal result, d.encode("hello world")
   end
 
+  def test_capitalize_letter
+    d = Dictionary.new
+    result = "..\n..\n.0\n0.\n..\n.."
+    assert_equal result, d.capitalize_letter("")
+  end
+
 end
