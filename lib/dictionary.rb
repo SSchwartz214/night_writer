@@ -43,4 +43,8 @@ class Dictionary
     braille_chars.join("\n")
   end
 
+  def capitalize_letter
+    ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
+  end
+
 end
