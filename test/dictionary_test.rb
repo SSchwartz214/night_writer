@@ -11,12 +11,13 @@ class DictionaryTest < Minitest::Test
   def test_a_letter
     d = Dictionary.new
 
-    assert_equal "0.....", d.encode("a")
+    assert_equal "0.\n..\n..", d.encode("a")
   end
 
   def test_a_word
+
     d = Dictionary.new
-    result = "0.00..0..0..0.0.0.0.0.0.0..00..000.00..00.0.000.0.0.0.00.0.."
+    result = "0.\n00\n..\n0.\n.0\n..\n0.\n0.\n0.\n0.\n0.\n0.\n0.\n.0\n0.\n\n.0\n00\n.0\n0.\n.0\n0.\n0.\n00\n0.\n0.\n0.\n0.\n00\n.0\n.."
     assert_equal result, d.encode("hello world")
   end
 

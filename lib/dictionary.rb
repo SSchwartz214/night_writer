@@ -32,9 +32,8 @@ class Dictionary
   def encode(text)
    letters = text.split("")
    braille_chars = letters.map do | char |
-     # binding.pry
      ENGLISH_TO_BRAILLE[char]
    end
-   braille_chars.flatten.join
+   braille_chars.join("\n")
   end
 end
