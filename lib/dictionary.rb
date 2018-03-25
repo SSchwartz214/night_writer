@@ -28,11 +28,12 @@ class Dictionary
     "y" => ["00",".0","00"],
     "z" => ["0.",".0","00"]
   }
-  def encode
-    values = ENGLISH_TO_BRAILLE.values
-    values_sliced = values.each_slice(1) do |letter|
-      return letter
-    end
-    values_sliced
+
+  def encode(text)
+   letters = text.split("")
+   braille_chars = letters.map do | char |
+     ENGLISH_TO_BRAILLE[char]
+   end
+   braille_chars.join("\n")
   end
 end
