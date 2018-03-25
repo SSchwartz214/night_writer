@@ -9,23 +9,32 @@ class DictionaryTest < Minitest::Test
   end
 
   def test_a_letter
+    skip
     d = Dictionary.new
 
     assert_equal "0.\n..\n..", d.encode("a")
   end
 
   def test_a_word
-
+    skip
     d = Dictionary.new
     result = "0.\n00\n..\n0.\n.0\n..\n0.\n0.\n0.\n0.\n0.\n0.\n0.\n.0\n0.\n\n.0\n00\n.0\n0.\n.0\n0.\n0.\n00\n0.\n0.\n0.\n0.\n00\n.0\n.."
     assert_equal result, d.encode("hello world")
   end
 
-  def test_capitalize_letter
+  def test_capitalize_braille_char
     skip
     d = Dictionary.new
+
+    assert_equal "..\n..\n.0", d.capitalize_letter
+  end
+
+  def test_capitalize_letter
+
+    d = Dictionary.new
+
     result = "..\n..\n.0\n0.\n..\n.."
-    assert_equal result, d.encode("A")
+    assert_equal result, d.translate_to_braille("A")
   end
 
 end

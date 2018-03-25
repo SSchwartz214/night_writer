@@ -33,18 +33,23 @@ class Dictionary
   def encode(text)
     letters = text.split("")
     braille_chars = letters.map do | char |
-      # if letters.join == text.downcase
-        # binding.pry
         ENGLISH_TO_BRAILLE[char]
-      # else
-       # ENGLISH_TO_BRAILLE.fetch(:shift).join("\n") + "/n" + braille_chars.join("\n")
-      # end
     end
     braille_chars.join("\n")
   end
 
   def capitalize_letter
     ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
+  end
+
+  def shift_char(text)
+    # binding.pry
+    if text == text.downcase
+      encode
+    else
+      text
+      capitalize_letter + "\n" + encode
+    end
   end
 
 end
