@@ -9,10 +9,15 @@ class DictionaryTest < Minitest::Test
   end
 
   def test_a_letter
-
     d = Dictionary.new
 
-    assert_equal "0.","..","..", d.encode
+    assert_equal "0.....", d.encode("a")
+  end
+
+  def test_a_word
+    d = Dictionary.new
+    result = "0.00..0..0..0.0.0.0.0.0.0..00..000.00..00.0.000.0.0.0.00.0.."
+    assert_equal result, d.encode("hello world")
   end
 
 end
