@@ -46,5 +46,5 @@ class Dictionary
   def capitalize_letter
     ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
   end
-# this is a change
+
 end
