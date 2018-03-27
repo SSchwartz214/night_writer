@@ -9,7 +9,7 @@ class DictionaryTest < Minitest::Test
   end
 
   def test_a_letter
-
+    
     d = Dictionary.new
 
     assert_equal "0.\n..\n..", d.encode("a")
@@ -18,6 +18,7 @@ class DictionaryTest < Minitest::Test
   def test_a_word
 
     d = Dictionary.new
+
     result = "0.\n00\n..\n0.\n.0\n..\n0.\n0.\n0.\n0.\n0.\n0.\n0.\n.0\n0.\n\n.0\n00\n.0\n0.\n.0\n0.\n0.\n00\n0.\n0.\n0.\n0.\n00\n.0\n.."
     assert_equal result, d.encode("hello world")
   end
@@ -29,4 +30,12 @@ class DictionaryTest < Minitest::Test
     result = "..\n..\n.0\n0.\n..\n.."
     assert_equal result, d.encode("A")
   end
+
+  def test_it_can_capitalize_multiple_letters
+
+    d = Dictionary.new
+    result = "..\n..\n.0\n0.\n..\n..\n..\n..\n.0\n0.\n0.\n.."
+    assert_equal result, d.encode("AB")
+  end
+
 end
