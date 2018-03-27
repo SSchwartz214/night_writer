@@ -32,12 +32,15 @@ class Dictionary
 
   def encode(text)
     letters = text.split("")
-    braille_chars = letters.map do | char |
-    if text == text.downcase
-      ENGLISH_TO_BRAILLE[char]
-    else
-      ENGLISH_TO_BRAILLE.fetch(:shift).join("\n")
-      ENGLISH_TO_BRAILLE[char]
+    braille_chars = letters.map do |char|
+      # bind ing.pry
+      if text == text.downcase
+        ENGLISH_TO_BRAILLE[char]
+      else
+        # binding.pry
+        ENGLISH_TO_BRAILLE.fetch(:shift).join("\n") +
+        "\n" +
+        ENGLISH_TO_BRAILLE[char.downcase].join("\n")
       end
     end
     braille_chars.join("\n")
