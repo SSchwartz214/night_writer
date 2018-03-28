@@ -34,32 +34,32 @@ class Dictionary
     letters = text.split("")
     braille_chars = letters.map do |character|
       if character == character.downcase
-        print_rows(ENGLISH_TO_BRAILLE[character])
+        ENGLISH_TO_BRAILLE[character]
       else
-        print_rows(ENGLISH_TO_BRAILLE.fetch(:shift))
-        print_rows(ENGLISH_TO_BRAILLE[character.downcase])
+        ENGLISH_TO_BRAILLE.fetch(:shift)
+        ENGLISH_TO_BRAILLE[character.downcase]
       end
     end
-    braille_chars.join("\n")
+    print_rows(braille_chars)
+    # binding.pry
   end
 
   def print_rows(braille_text)
-    # row_1 = first_element_in_array(braille_text)[0]
-    # row_2 = second_element_in_array(braille_text)[0]
-    # row_3 = third_element_in_array(braille_text)[0] + "/n"
-
-# [3] pry(#<Dictionary>)> ENGLISH_TO_BRAILLE[char]
-# => ["0.", "00", ".."]
-# [4] pry(#<Dictionary>)> ENGLISH_TO_BRAILLE[char][0]
-# => "0."
-# [5] pry(#<Dictionary>)> ENGLISH_TO_BRAILLE[char][1]
-# => "00"
-# [6] pry(#<Dictionary>)> ENGLISH_TO_BRAILLE[char][2]
-# => ".." need a new line
-
-
-    #find a way to save the rows. Then add on to the first row, second row, then third row for the next braille char.
-    #scope
-    binding.pry
+    i = 0
+    result = ""
+    3.times do
+      result = braille_text.reduce(result) do |accum, letter|
+        if letter
+          accum += letter[i]
+        else
+          accum += "  "
+        end
+        # accum += letter ? letter[i] : '  '
+        # accum += (if letter then letter[i] else '')
+      end
+     i+=1
+     result += "\n"
+    end
+    result
   end
 end

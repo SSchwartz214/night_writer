@@ -9,32 +9,32 @@ class DictionaryTest < Minitest::Test
   end
 
   def test_a_letter
-skip
+
     d = Dictionary.new
 
-    assert_equal "0.\n..\n..", d.encode("a")
+    assert_equal"0.\n..\n..\n", d.encode("a")
   end
 
   def test_a_word
-skip
+
     d = Dictionary.new
 
-    result = "0.\n00\n..\n0.\n.0\n..\n0.\n0.\n0.\n0.\n0.\n0.\n0.\n.0\n0.\n\n.0\n00\n.0\n0.\n.0\n0.\n0.\n00\n0.\n0.\n0.\n0.\n00\n.0\n.."
+    result = "0.0.0.0.0.  .00.0.0.00\n00.00.0..0  00.0000..0\n....0.0.0.  .00.0.0...\n"
     assert_equal result, d.encode("hello world")
   end
 
   def test_capitalize_letter
-skip
+
     d = Dictionary.new
 
-    result = "..\n..\n.0\n0.\n..\n.."
+    result = "0.\n..\n..\n"
     assert_equal result, d.encode("A")
   end
 
   def test_it_can_capitalize_multiple_letters
-skip
+
     d = Dictionary.new
-    result = "..\n..\n.0\n0.\n..\n..\n..\n..\n.0\n0.\n0.\n.."
+    result = "0.0.\n..0.\n....\n"
     assert_equal result, d.encode("AB")
   end
 
