@@ -47,7 +47,7 @@ class Translator
     i = 0
     result = ""
     3.times do
-  = (if letter then letter[i] else '')
+      write_lines()
       end
      i+=1
      result += "\n"

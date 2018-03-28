@@ -3,6 +3,7 @@ class Writer
   end
 
   def write_lines
+    result = ""
     result = braille_text.reduce(result) do |accum, letter|
       if letter
         accum += letter[i]
