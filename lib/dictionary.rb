@@ -48,14 +48,8 @@ class Dictionary
     i = 0
     result = ""
     3.times do
-      result = braille_text.reduce(result) do |accum, letter|
-        if letter
-          accum += letter[i]
-        else
-          accum += "  "
-        end
-        # accum += letter ? letter[i] : '  '
-        # accum += (if letter then letter[i] else '')
+      result = braille_text.reduce(result) do |accumulator, letter|
+        accumulator += letter ? letter[i] : '  '
       end
      i+=1
      result += "\n"
