@@ -48,7 +48,6 @@ class Dictionary
     3.times do |index|
       result = braille_text.reduce(result) do |accum, letter|
         if letter
-          # binding.pry
           accum += letter[index]
         else
           accum += "  "
@@ -56,6 +55,7 @@ class Dictionary
       end
      result += "\n"
     end
+    binding.pry
     result
   end
 end
