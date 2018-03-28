@@ -3,6 +3,7 @@ require "pry"
 
 handle = File.open(ARGV[0], "r")
 incoming_text = handle.read.strip
+binding.pry
 handle.close
 
 dictionary = Dictionary.new
