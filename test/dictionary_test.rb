@@ -15,6 +15,28 @@ class DictionaryTest < Minitest::Test
     assert_equal"0.\n..\n..\n", d.encode("a")
   end
 
+  def test_letter_on_multiple_rows
+
+    d = Dictionary.new
+
+    assert_equal "0.\n..\n..\n", d.print_rows([["0.","..",".."]])
+  end
+
+  def test_word_on_multiple_rows
+    d = Dictionary.new
+    result = [["0.","00",".."],
+              ["0.",".0",".."],
+              ["0.","0.","0."],
+              ["0.","0.","0."],
+              ["0.",".0","0."],
+              ["  ","  ","  "],
+              [".0","00",".0"]]
+
+    expected = "0.0.0.0.0.  .0\n00.00.0..0  00\n....0.0.0.  .0\n"
+
+    assert_equal expected, d.print_rows(result)
+  end
+
   def test_a_word
 
     d = Dictionary.new
