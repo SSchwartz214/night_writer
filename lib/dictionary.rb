@@ -50,6 +50,7 @@ class Dictionary
     3.times do
       result = braille_text.reduce(result) do |accumulator, letter|
         accumulator += letter ? letter[i] : '  '
+        accumulator
       end
      i+=1
      result += "\n"
