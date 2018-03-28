@@ -16,7 +16,7 @@ skip
   end
 
   def test_a_word
-skip
+    skip
     d = Dictionary.new
 
     result = "0.\n00\n..\n0.\n.0\n..\n0.\n0.\n0.\n0.\n0.\n0.\n0.\n.0\n0.\n\n.0\n00\n.0\n0.\n.0\n0.\n0.\n00\n0.\n0.\n0.\n0.\n00\n.0\n.."
@@ -39,6 +39,7 @@ skip
   end
 
   def test_puts_new_line_at_end_two_characters
+
     d = Dictionary.new
     result = "0..0\n000.\n....\n"
     assert_equal result, d.encode("hi")
