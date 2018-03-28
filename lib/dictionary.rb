@@ -1,4 +1,4 @@
-class Dictionary
+class Translator
 
   ENGLISH_TO_BRAILLE = {
     "a" => ["0.","..",".."],
@@ -41,25 +41,18 @@ class Dictionary
       end
     end
     print_rows(braille_chars)
-    # binding.pry
   end
 
   def print_rows(braille_text)
     i = 0
     result = ""
     3.times do
-      result = braille_text.reduce(result) do |accum, letter|
-        if letter
-          accum += letter[i]
-        else
-          accum += "  "
-        end
-        # accum += letter ? letter[i] : '  '
-        # accum += (if letter then letter[i] else '')
+  = (if letter then letter[i] else '')
       end
      i+=1
      result += "\n"
     end
     result
+    binding.pry
   end
 end
