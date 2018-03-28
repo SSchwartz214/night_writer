@@ -41,23 +41,19 @@ class Dictionary
       end
     end
     print_rows(braille_chars)
-    # binding.pry
   end
 
   def print_rows(braille_text)
-    i = 0
     result = ""
-    3.times do
+    3.times do |index|
       result = braille_text.reduce(result) do |accum, letter|
         if letter
-          accum += letter[i]
+          # binding.pry
+          accum += letter[index]
         else
           accum += "  "
         end
-        # accum += letter ? letter[i] : '  '
-        # accum += (if letter then letter[i] else '')
       end
-     i+=1
      result += "\n"
     end
     result
