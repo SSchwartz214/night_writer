@@ -11,5 +11,5 @@ writer = File.open(ARGV[1], "w")
 writer.write(dictionary.encode(incoming_text))
 writer.close
 
-puts "Created 'message.txt' with the braille.txt #{dictionary.encode} /
+puts "Created 'message.txt' with the braille.txt #{dictionary.encode(incoming_text)} /
 #{ARGV[1]}."
