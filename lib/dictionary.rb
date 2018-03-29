@@ -41,9 +41,7 @@ class Dictionary
         ENGLISH_TO_BRAILLE[character.downcase]
       end
     end
-    # binding.pry
     print_rows(braille_chars)
-    # binding.pry
   end
 
   def print_rows(braille_text)
