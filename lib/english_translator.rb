@@ -32,7 +32,7 @@ class EnglishTranslator
 
   def decode(text)
     binding.pry
-    text.each do |character|
+    english_letter = text.each do |character|
       BRAILLE_TO_ENGLISH[character].chars
       end
   end
