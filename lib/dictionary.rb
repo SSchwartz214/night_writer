@@ -27,7 +27,8 @@ class Dictionary
     "x" => ["00","..","00"],
     "y" => ["00",".0","00"],
     "z" => ["0.",".0","00"],
-    :shift => ["..","..",".0"]
+    :shift => ["..","..",".0"],
+    " " => ["  ", "  ", "  "]
   }
 
   def encode(text)
@@ -41,18 +42,14 @@ class Dictionary
       end
     end
     print_rows(braille_chars)
-    # binding.pry
   end
 
   def print_rows(braille_text)
-    i = 0
     result = ""
-    3.times do
-      result = braille_text.reduce(result) do |accumulator, letter|
-        accumulator += letter ? letter[i] : '  '
-        accumulator
+    3.times do |i|
+      result = braille_text.reduce(result) do |accum, letter|
+        accum += letter[i]
       end
-     i+=1
      result += "\n"
     end
     result
