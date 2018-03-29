@@ -43,7 +43,7 @@ class BrailleTranslator
       if character == character.downcase
         ENGLISH_TO_BRAILLE[character]
       else
-        ENGLISH_TO_BRAILLE.fetch(:shift)
+        ENGLISH_TO_BRAILLE.fetch(:shift) +
         ENGLISH_TO_BRAILLE[character.downcase]
       end
     end

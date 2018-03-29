@@ -49,14 +49,14 @@ class BrailleTranslatorTest < Minitest::Test
 
     braille_translator = BrailleTranslator.new
 
-    result = "0.\n..\n..\n"
+    result = "..0.\n....\n.0..\n"
     assert_equal result, braille_translator.encode("A")
   end
 
   def test_it_can_capitalize_multiple_letters
 
     braille_translator = BrailleTranslator.new
-    result = "0.0.\n..0.\n....\n"
+    result = "..0...0.\n......0.\n.0...0..\n"
     assert_equal result, braille_translator.encode("AB")
   end
 
