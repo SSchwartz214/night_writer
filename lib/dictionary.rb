@@ -52,6 +52,7 @@ class Dictionary
       end
      result += "\n"
     end
+    binding.pry
     result
   end
 end
