@@ -46,9 +46,9 @@ class Dictionary
 
   def print_rows(braille_text)
     result = ""
-    3.times do |i|
-      result = braille_text.reduce(result) do |accum, letter|
-        accum += letter[i]
+    3.times do |index|
+      result = braille_text.reduce(result) do |string, braille|
+        string += braille[index]
       end
      result += "\n"
     end
