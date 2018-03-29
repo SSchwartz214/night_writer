@@ -32,7 +32,6 @@ class Dictionary
   }
 
   def encode(text)
-    binding.pry
     letters = text.split("")
     braille_chars = letters.map do |character|
       if character == character.downcase
